@@ -3,9 +3,17 @@
 
 import random, time, os
 
-def rules:
+def rules():
+    print("""I am thinking of a unique 3-digit number. Try to guess what it is.
+The clues I give are...
+When I say:    That means:
+  Bagels       None of the digits is correct.
+  Pico         One digit is correct but in the wrong position.
+  Fermi        One digit is correct and in the right position.
+I have thought up a number. You have 10 guesses to get it.""")
 
-    input('Press ENTER to begin the game')
+    input('\nPress ENTER to begin the game')
+    os.system('cls')
 
 def generateNumber():
     number = ''
@@ -29,13 +37,13 @@ def userGuess():
         if len(set(guess)) != 3:
             print('Those are not unique digits')
             time.sleep(.5)
-            os.system('clear')
+            os.system('cls')
             return userGuess()
 
     except:
         print('That was not a number')
         time.sleep(.5)
-        os.system('clear')
+        os.system('cls')
         return userGuess()
 
     return guess
@@ -66,7 +74,7 @@ def playAgain():
         ans = input('Would you like to play the game again (y/n): ').lower()
 
     if ans == 'y':
-        os.system('clear')
+        os.system('cls')
         main()
 
 def main():
@@ -91,5 +99,5 @@ def main():
     playAgain()
 
 if __name__ == "__main__":
-    os.system('clear')
+    os.system('cls')
     main()
