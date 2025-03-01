@@ -51,7 +51,6 @@ def userGuess():
 
 def checkWin(guess, number):
     if guess == number:
-        print('>> BAGELS')
         return True
 
     d = {}
@@ -65,6 +64,9 @@ def checkWin(guess, number):
     for i in range(3):
         if guess[i] in number and d[guess[i]] is None:
             print('>> PICO')
+
+    if len([i for i in list(d.values()) if i is None]) == 3:
+        print('>> BAGELS')
 
     return False
 
