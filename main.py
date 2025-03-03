@@ -54,7 +54,7 @@ def checkWin(guess, number):
         return True
 
     d = {}
-    for i in guess: d[i] = None
+    for i in range(3): d[i] = None
 
     for i in range(3):
         if guess[i] == number[i]:
